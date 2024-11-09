@@ -139,4 +139,3 @@ energy_report = demonstrate_animal_behavior(animals)
 print("\nEnergy levels after demonstration:")
 for name, energy in energy_report.items():
     print(f"{name}: {energy}%")
-
