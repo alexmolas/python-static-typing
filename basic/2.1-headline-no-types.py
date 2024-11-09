@@ -1,6 +1,3 @@
-import time
-
-
 def headline(text, align=True):
     if align:
         return f"{text.title()}\n{'-' * len(text)}"
