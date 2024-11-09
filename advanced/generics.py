@@ -59,7 +59,7 @@ class Leaf[A]:
         return Leaf(f(self.value))
 
 
-def print_tree[T](tree: RoseTree[T]):
+def print_tree[T](tree: RoseTree[T]) -> None:
     trees = [(tree, 0)]
     while trees:
         match trees.pop(0):

@@ -47,15 +47,15 @@ class Event[Time](Protocol):
     def description(self: Self) -> str: ...
 
 
-def log_event_datetime(event: Event[datetime]):
+def log_event_datetime(event: Event[datetime]) -> None:
     print(f"Got {event.id} at timestamp {event.time}: {event.description()}")
 
 
-def log_event_date(event: Event[date]):
+def log_event_date(event: Event[date]) -> None:
     print(f"Got {event.id} at day {event.time}: {event.description()}")
 
 
-def log(x: Any):
+def log(x: Any) -> None:
     match x:
         case Event() if isinstance(x.time, datetime):
             log_event_datetime(x)
@@ -68,3 +68,4 @@ def log(x: Any):
 
 log(Increment("foo", datetime.now()))
 log(Increment("bar", date.today()))
+log(Reset("baz", date.today()))
